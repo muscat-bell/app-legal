@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
-  {% if page.app_name %}{{ page.app_name }} | {% endif %}{{ site.title }}
+  {% if page.app_name %}{{ page.app_name }}{% if page.doc_type %} - {{ site.data.doc_types[page.doc_type] | default: page.doc_type }}{% endif %} | {% endif %}{{ site.title }}
 </title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
 <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">

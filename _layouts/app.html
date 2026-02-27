@@ -4,6 +4,7 @@ layout: default
 <article class="app-policy">
   <header class="policy-header">
     <h1>{{ page.app_name }}</h1>
+    <p class="policy-doc-type">{{ site.data.doc_types[page.doc_type] | default: page.doc_type }}</p>
     {% if page.version %}
     <p class="policy-meta">
       <span class="policy-version">Version {{ page.version }}</span>
@@ -24,6 +25,6 @@ layout: default
   </div>
 
   <footer class="policy-footer">
-    <a href="{{ site.baseurl }}/">&larr; アプリ一覧へ戻る</a>
+    <a href="{{ site.baseurl }}/">&larr; 一覧へ戻る</a>
   </footer>
 </article>

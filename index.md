@@ -1,25 +1,33 @@
 ---
 layout: default
 lang: ja
-title: "プライバシーポリシー一覧"
+title: "法的ドキュメント一覧"
 ---
 
 <h1 class="page-title">アプリ一覧</h1>
 
+{% assign apps_grouped = site.apps | group_by: "app_id" | sort: "name" %}
 <ul class="app-list">
-  {% assign sorted_apps = site.apps | sort: "app_name" %}
-  {% for app in sorted_apps %}
+  {% for group in apps_grouped %}
+  {% assign first_doc = group.items | first %}
   <li class="app-list-item">
-    <a href="{{ app.url | prepend: site.baseurl }}">
-      <div class="app-name">{{ app.app_name }}</div>
-      {% if app.description %}
-      <div class="app-description">{{ app.description }}</div>
-      {% endif %}
-      <div class="app-meta">
-        {% if app.last_updated %}最終更新: {{ app.last_updated }}{% endif %}
-        {% if app.lang %} &middot; 言語: {{ app.lang }}{% endif %}
-      </div>
-    </a>
+    <div class="app-name">{{ first_doc.app_name }}</div>
+    {% if first_doc.description %}
+    <div class="app-description">{{ first_doc.description }}</div>
+    {% endif %}
+    <ul class="doc-type-list">
+      {% assign sorted_docs = group.items | sort: "doc_type" %}
+      {% for doc in sorted_docs %}
+      <li>
+        <a href="{{ doc.url | prepend: site.baseurl }}">
+          {{ site.data.doc_types[doc.doc_type] | default: doc.doc_type }}
+        </a>
+        <span class="app-meta">
+          {% if doc.last_updated %}最終更新: {{ doc.last_updated }}{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
   </li>
   {% endfor %}
 </ul>

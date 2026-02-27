@@ -1,9 +1,9 @@
-title: "プライバシーポリシー"
-description: "Androidアプリのプライバシーポリシー一覧"
+title: "アプリ法的情報"
+description: "Androidアプリの法的ドキュメント一覧"
 lang: "ja"
 
 # GitHub Pages settings
-baseurl: "/privacy-policies"
+baseurl: "/app-legal"
 url: "https://muscat-bell.github.io"
 
 # Jekyll settings
@@ -16,7 +16,8 @@ plugins:
 collections:
   apps:
     output: true
-    permalink: /:name/
+    # URL構造: /<app_id>/<doc_type>/ 例: /app1/privacy/ /app1/terms/
+    permalink: /:app_id/:doc_type/
 
 # Default front matter
 defaults:
@@ -26,6 +27,7 @@ defaults:
     values:
       layout: "app"
       lang: "ja"
+      doc_type: "privacy"
 
 # Exclude files from build
 exclude:

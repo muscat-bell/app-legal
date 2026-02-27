@@ -1,5 +1,7 @@
 ---
 app_name: "サンプルアプリ2"
+app_id: "app2"
+doc_type: "privacy"
 description: "サンプルAndroidアプリケーション2のプライバシーポリシーです。"
 lang: ja
 version: "1.0"

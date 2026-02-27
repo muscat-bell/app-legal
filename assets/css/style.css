@@ -1,5 +1,5 @@
 /* =====================================================
-   Privacy Policies Site - Legal Document Style
+   App Legal Site - Legal Document Style
    ===================================================== */
 
 /* --- Reset & Base ---------------------------------- */
@@ -84,18 +84,12 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 6px;
   margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
   transition: box-shadow 0.2s;
 }
 
 .app-list-item:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.app-list-item a {
-  display: block;
-  padding: 1rem 1.25rem;
-  text-decoration: none;
-  color: inherit;
 }
 
 .app-list-item .app-name {
@@ -116,6 +110,43 @@ body {
   margin-top: 0.25rem;
 }
 
+/* 文書種別リスト（アプリ配下の各ドキュメントへのリンク） */
+.doc-type-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.doc-type-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.doc-type-list a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #1a73e8;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #1a73e8;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.doc-type-list a:hover {
+  background: #1a73e8;
+  color: #fff;
+}
+
+.doc-type-list .app-meta {
+  font-size: 0.8rem;
+  color: #888;
+}
+
 /* --- App Policy Page ------------------------------- */
 .app-policy {
   background: #fff;
@@ -133,6 +164,18 @@ body {
 .policy-header h1 {
   font-size: 1.6rem;
   color: #1a1a1a;
+  margin: 0 0 0.25rem;
+}
+
+/* 文書種別バッジ（プライバシーポリシー・利用規約など） */
+.policy-doc-type {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
   margin: 0 0 0.5rem;
 }
 
