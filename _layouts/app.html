@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="app-policy">
+  <header class="policy-header">
+    <h1>{{ page.app_name }}</h1>
+    {% if page.version %}
+    <p class="policy-meta">
+      <span class="policy-version">Version {{ page.version }}</span>
+      {% if page.last_updated %}
+      <span class="policy-date">{{ page.last_updated }}</span>
+      {% endif %}
+    </p>
+    {% endif %}
+    {% if page.lang == 'ja' %}
+    <p class="policy-lang-note">言語: 日本語</p>
+    {% elsif page.lang == 'en' %}
+    <p class="policy-lang-note">Language: English</p>
+    {% endif %}
+  </header>
+
+  <div class="policy-body">
+    {{ content }}
+  </div>
+
+  <footer class="policy-footer">
+    <a href="{{ site.baseurl }}/">&larr; アプリ一覧へ戻る</a>
+  </footer>
+</article>

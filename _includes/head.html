@@ -1,0 +1,7 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+  {% if page.app_name %}{{ page.app_name }} | {% endif %}{{ site.title }}
+</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">

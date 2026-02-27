@@ -1,0 +1,35 @@
+title: "プライバシーポリシー"
+description: "Androidアプリのプライバシーポリシー一覧"
+lang: "ja"
+
+# GitHub Pages settings
+baseurl: "/privacy-policies"
+url: "https://muscat-bell.github.io"
+
+# Jekyll settings
+markdown: kramdown
+theme: null
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  apps:
+    output: true
+    permalink: /:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "apps"
+    values:
+      layout: "app"
+      lang: "ja"
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github
