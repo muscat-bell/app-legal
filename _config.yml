@@ -9,8 +9,7 @@ url: "https://muscat-bell.github.io"
 # Jekyll settings
 markdown: kramdown
 theme: null
-plugins:
-  - jekyll-feed
+plugins: []
 
 # Collections
 collections:
@@ -27,7 +26,6 @@ defaults:
     values:
       layout: "app"
       lang: "ja"
-      doc_type: "privacy"
 
 # Exclude files from build
 exclude:

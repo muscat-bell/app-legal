@@ -20,10 +20,14 @@ app-legal/
 │   ├── copilot-instructions.md   # Copilot 利用ガイドライン（日本語使用）
 │   └── workflows/
 │       └── deploy.yml            # GitHub Actions ワークフロー
-├── _apps/                        # Jekyll collection（各アプリの法的ドキュメント）
-│   ├── app1.md                   # サンプルアプリ1 プライバシーポリシー
-│   ├── app2.md                   # サンプルアプリ2 プライバシーポリシー
-│   └── app3.md                   # サンプルアプリ3 プライバシーポリシー
+├── _apps/                        # Jekyll collection（アプリごとにサブディレクトリ）
+│   ├── app1/
+│   │   ├── privacy.md            # サンプルアプリ1 プライバシーポリシー
+│   │   └── terms.md              # サンプルアプリ1 利用規約（追加例）
+│   ├── app2/
+│   │   └── privacy.md
+│   └── app3/
+│       └── privacy.md
 ├── _data/
 │   └── doc_types.yml             # 文書種別ラベル定義
 ├── _layouts/
@@ -56,8 +60,11 @@ app-legal/
 
 ### 1. ファイルを作成する
 
+アプリのサブディレクトリ配下に文書種別名のファイルを作成します。
+
 ```bash
-touch _apps/myapp-terms.md
+mkdir -p _apps/myapp
+touch _apps/myapp/terms.md
 ```
 
 ### 2. front matter を記述する
@@ -86,7 +93,7 @@ GitHub Actions が自動デプロイします。
 ## 新しいアプリのプライバシーポリシーを追加する
 
 ```yaml
-# _apps/myapp.md
+# _apps/myapp/privacy.md
 ---
 app_name: "マイアプリ"
 app_id: "myapp"
@@ -104,7 +111,7 @@ Markdown でポリシー本文を記述…
 ## 英語版を追加する手順
 
 ```yaml
-# _apps/myapp-en.md
+# _apps/myapp/privacy-en.md
 ---
 app_name: "My App"
 app_id: "myapp"
