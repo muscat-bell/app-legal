@@ -1,0 +1,35 @@
+title: "アプリ法的情報"
+description: "Androidアプリの法的ドキュメント一覧"
+lang: "ja"
+
+# GitHub Pages settings
+baseurl: "/app-legal"
+url: "https://muscat-bell.github.io"
+
+# Jekyll settings
+markdown: kramdown
+theme: null
+plugins: []
+
+# Collections
+collections:
+  apps:
+    output: true
+    # URL構造: /<app_id>/<doc_type>/ 例: /app1/privacy/ /app1/terms/
+    permalink: /:app_id/:doc_type/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "apps"
+    values:
+      layout: "app"
+      lang: "ja"
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .github
