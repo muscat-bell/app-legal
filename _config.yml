@@ -16,7 +16,7 @@ collections:
   apps:
     output: true
     # URL構造: /<app_id>/<doc_type>/ 例: /app1/privacy/ /app1/terms/
-    permalink: /:app_id/:doc_type/
+    permalink: /:path/
 
 # Default front matter
 defaults:
