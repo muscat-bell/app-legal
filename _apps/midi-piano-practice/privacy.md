@@ -169,8 +169,7 @@ https://firebase.google.com/support/privacy
 
 **アプリ名:** MIDI Piano Practice  
 **開発者:** muscat-bell  
-**お問い合わせ:** GitHubリポジトリのIssuesセクション  
-https://github.com/muscat-bell/midi-piano-practice-app/issues
+**お問い合わせ:** xxx@gmail.com
 
 ## 10. 準拠法
 
