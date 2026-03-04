@@ -9,7 +9,7 @@ layout: default
     <p class="policy-meta">
       <span class="policy-version">Version {{ page.version }}</span>
       {% if page.last_updated %}
-      <span class="policy-date">{{ page.last_updated }}</span>
+      <span class="policy-date">最終更新日: {{ page.last_updated | date: "%Y年%-m月%-d日" }}</span>
       {% endif %}
     </p>
     {% endif %}
