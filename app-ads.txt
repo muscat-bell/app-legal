@@ -1,0 +1,17 @@
+# app-ads.txt — Authorized Sellers for Apps (IAB Tech Lab spec 1.0)
+# 対象アプリ: Pianoria (Google Play)
+#
+# !!! TODO: 公開前に pub-0000000000000000 を実際のパブリッシャー ID に置き換えること !!!
+#   AdMob 管理画面 → 設定 → アカウント情報 → パブリッシャー ID (pub- から始まる16桁)
+#
+# 【配置場所の注意】
+#   このファイルはデベロッパー ウェブサイトの「ドメイン直下」で配信する必要がある。
+#   クローラーはストア掲載の URL からホスト名だけを取り出し、パス部分を無視する。
+#     OK: https://muscat-bell.github.io/app-ads.txt
+#     NG: https://muscat-bell.github.io/app-legal/app-ads.txt  (サブディレクトリはクロールされない)
+#   セットアップ手順は docs/app-ads-txt.md を参照。
+#
+# 【形式】<広告システムのドメイン>, <パブリッシャーID>, <関係性 DIRECT|RESELLER>, <認証局ID(任意)>
+#   f08c47fec0942fa0 は Google の TAG-ID（全パブリッシャー共通の固定値）。
+
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

@@ -12,6 +12,19 @@
 | app1 | 利用規約 | `/app-legal/app1/terms/` |
 | app2 | プライバシーポリシー | `/app-legal/app2/privacy/` |
 
+## app-ads.txt について
+
+AdMob の広告在庫を認証するための `app-ads.txt` を管理しています。
+
+> **重要**: このファイルは**ドメイン直下**でしか認識されません。
+> AdMob のクローラーはデベロッパー ウェブサイト URL からホスト名だけを取り出すため、
+> `https://muscat-bell.github.io/app-legal/app-ads.txt`（サブディレクトリ）はクロールされず、
+> `https://muscat-bell.github.io/app-ads.txt` を取得しに来ます。
+> 実際の配信には `muscat-bell.github.io` という名前の User Pages リポジトリが必要です。
+
+セットアップ手順・パブリッシャー ID の扱い・トラブルシューティングは
+[`docs/app-ads-txt.md`](docs/app-ads-txt.md) を参照してください。
+
 ## ディレクトリ構成
 
 ```
@@ -20,6 +33,8 @@ app-legal/
 │   ├── copilot-instructions.md   # Copilot 利用ガイドライン（日本語使用）
 │   └── workflows/
 │       └── deploy.yml            # GitHub Actions ワークフロー
+├── docs/
+│   └── app-ads-txt.md            # app-ads.txt セットアップ手順（サイトには公開しない）
 ├── _apps/                        # Jekyll collection（アプリごとにサブディレクトリ）
 │   ├── app1/
 │   │   ├── privacy.md            # サンプルアプリ1 プライバシーポリシー
@@ -38,6 +53,7 @@ app-legal/
 ├── assets/
 │   └── css/
 │       └── style.css             # スタイルシート
+├── app-ads.txt                   # AdMob 認証用（配信先は本文の注意書きを参照）
 ├── _config.yml                   # Jekyll 設定
 ├── Gemfile                       # Ruby 依存関係
 └── index.md                      # トップページ（アプリ・文書種別一覧）
