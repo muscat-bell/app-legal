@@ -22,7 +22,8 @@ AdMob の広告在庫を認証するための `app-ads.txt` を管理してい�
 > `https://muscat-bell.github.io/app-ads.txt` を取得しに来ます。
 > 実際の配信には `muscat-bell.github.io` という名前の User Pages リポジトリが必要です。
 
-セットアップ手順・パブリッシャー ID の扱い・トラブルシューティングは
+配信用リポジトリの構築は [`docs/setup-user-pages.sh`](docs/setup-user-pages.sh) で自動化できます。
+配置ルール・パブリッシャー ID の扱い・トラブルシューティングは
 [`docs/app-ads-txt.md`](docs/app-ads-txt.md) を参照してください。
 
 ## ディレクトリ構成
@@ -33,8 +34,9 @@ app-legal/
 │   ├── copilot-instructions.md   # Copilot 利用ガイドライン（日本語使用）
 │   └── workflows/
 │       └── deploy.yml            # GitHub Actions ワークフロー
-├── docs/
-│   └── app-ads-txt.md            # app-ads.txt セットアップ手順（サイトには公開しない）
+├── docs/                         # 手順書類（サイトには公開しない）
+│   ├── app-ads-txt.md            # app-ads.txt セットアップ手順
+│   └── setup-user-pages.sh       # muscat-bell.github.io リポジトリ構築スクリプト
 ├── _apps/                        # Jekyll collection（アプリごとにサブディレクトリ）
 │   ├── app1/
 │   │   ├── privacy.md            # サンプルアプリ1 プライバシーポリシー

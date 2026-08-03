@@ -37,25 +37,30 @@ Play Console のデベロッパー ウェブサイト URL は `https://muscat-be
 
 ### 3.1 User Pages リポジトリを作成する
 
-1. GitHub で **`muscat-bell.github.io`** という名前の**パブリック**リポジトリを新規作成する
-   （リポジトリ名はアカウント名と完全一致させること。大文字小文字は問わないが `.github.io` は必須）
-2. デフォルトブランチ（`main`）のルートに以下の 2 ファイルを置く
+**`muscat-bell.github.io`** という名前の**パブリック**リポジトリを新規作成します。
+リポジトリ名はアカウント名と完全一致させてください（`.github.io` の部分は必須）。
 
-**`app-ads.txt`**（このリポジトリの `app-ads.txt` をコピーし、パブリッシャー ID を実際の値に置換する）
+`setup-user-pages.sh` を実行すると、リポジトリ作成からファイル配置・push まで一括で行えます
+（[GitHub CLI](https://cli.github.com/) の `gh auth login` 済みであることが前提）。
 
+```bash
+./docs/setup-user-pages.sh
 ```
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-```
 
-**`.nojekyll`**（空ファイル。Jekyll のビルド処理を無効化し、静的ファイルをそのまま配信させる）
+手動で行う場合は、リポジトリ作成後にデフォルトブランチ（`main`）のルートへ次の 3 ファイルを置きます。
 
-> `index.html` を置いて `https://muscat-bell.github.io/app-legal/` へリダイレクトさせておくと、
-> ルートが 404 にならず見栄えが良くなります（AdMob の確認自体には不要）。
+| ファイル | 内容 |
+|----------|------|
+| `app-ads.txt` | `google.com, pub-1867732787940396, DIRECT, f08c47fec0942fa0` |
+| `.nojekyll` | 空ファイル。Jekyll のビルド処理を無効化し静的ファイルをそのまま配信させる |
+| `index.html` | 任意。`/app-legal/` へのリダイレクト（ルートが 404 になるのを防ぐ。AdMob の確認自体には不要） |
 
 ### 3.2 GitHub Pages を有効化する
 
-リポジトリの **Settings → Pages → Source** を **`Deploy from a branch`**、
-ブランチを **`main` / `/ (root)`** に設定します。数分でデプロイされます。
+`<ユーザー名>.github.io` リポジトリは通常、既定ブランチにファイルを push した時点で
+Pages が自動的に有効化されます。有効になっていない場合は
+**Settings → Pages → Source** を **`Deploy from a branch`**、
+ブランチを **`main` / `/ (root)`** に設定してください。数分でデプロイされます。
 
 ### 3.3 パブリッシャー ID を確認する
 
@@ -98,7 +103,7 @@ curl -sS  https://muscat-bell.github.io/app-ads.txt
 
 - HTTP ステータスが **200**（301/302 のリダイレクトを挟まないこと）
 - `content-type` が **`text/plain`**
-- 本文に `google.com, pub-..., DIRECT, f08c47fec0942fa0` の行が含まれる
+- 本文に `google.com, pub-1867732787940396, DIRECT, f08c47fec0942fa0` の行が含まれる
 - HTTPS で配信されている
 
 ### 3.5 AdMob で再確認する
@@ -155,8 +160,9 @@ unityads.unity3d.com, XXXXXXX, DIRECT
 - [ ] Play Console のストア掲載情報にウェブサイト URL が設定され、公開反映済みか
 - [ ] `robots.txt` でクローラーをブロックしていないか
 - [ ] パブリッシャー ID の桁数・綴りが AdMob 管理画面の表示と一致しているか
-- [ ] `pub-0000000000000000` のままになっていないか
-- [ ] 全角文字・全角スペース・BOM が混入していないか（半角 ASCII のみで記述する）
+- [ ] アプリ ID (`ca-app-pub-...~...`) を貼ってしまっていないか
+- [ ] 全角文字・全角スペース・BOM が混入していないか（エントリ行は半角 ASCII のみで記述する）
+- [ ] このリポジトリの `app-ads.txt` と `muscat-bell.github.io` 側の内容が一致しているか
 
 ## 参考
 
