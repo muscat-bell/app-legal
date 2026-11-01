@@ -4,7 +4,7 @@ app_id: "Pianoria"
 doc_type: "terms"
 description: "Terms of Service for Pianoria."
 lang: en
-version: "1.0"
+version: "1.1"
 last_updated: "2026-11-01"
 ---
 
@@ -22,7 +22,7 @@ By downloading, installing, or using the App, you are deemed to have agreed to t
 
 - **App**: Pianoria and its related services
 - **User** or **you**: Any individual or entity that downloads, installs, or uses the App
-- **We**, **us**, or **our**: muscat-bell, the developer and provider of the App
+- **We**, **us**, or **our**: Muscat Bell Labs, the developer and provider of the App
 - **Content**: Sound sources, MIDI files, images, text, and all other information provided within the App
 - **Premium Features**: Paid features provided through in-app purchases, such as ad removal
 
@@ -218,13 +218,15 @@ To the maximum extent permitted by applicable law, we shall not be liable for an
 
 ### 8.3 Limitation of Liability
 
-Even if we are found to be liable, our liability for damages shall be limited to the amount you paid for the App (the purchase price of the Premium Features).
+Even if we are found to be liable, except in cases of our willful misconduct or gross negligence, our liability for damages shall be limited to the amount you paid for the App (the purchase price of the Premium Features).
 
-We shall not be liable for any indirect, special, or consequential damages, or for lost profits.
+In addition, except in cases of our willful misconduct or gross negligence, we shall not be liable for any indirect, special, or consequential damages, or for lost profits.
 
-### 8.4 Consumer Rights
+### 8.4 Relationship with Applicable Law
 
-Some countries or regions do not allow the exclusion of certain warranties or the limitation or exclusion of liability. Nothing in these Terms excludes or limits any rights or liability that cannot be excluded or limited under applicable law, including any mandatory consumer protection laws of your country or region of residence. In such cases, the provisions of these Terms apply only to the extent permitted by applicable law.
+- The provisions of these Terms regarding disclaimers and limitations of our liability do not apply to damage caused to you by our willful misconduct or gross negligence.
+- Where applicable law does not permit the exclusion or limitation of our liability (for example, where these Terms constitute a consumer contract under the Consumer Contract Act of Japan), the provisions of these Terms regarding disclaimers and limitations of liability apply only to the extent permitted by applicable law. Even in such cases, our liability for damage caused to you by our negligence (excluding gross negligence) shall be limited to the scope set forth in Section 8.3.
+- Nothing in these Terms limits any rights you may have under the laws of your country or region of residence, including mandatory consumer protection laws.
 
 ## 9. User Responsibilities
 
@@ -240,8 +242,8 @@ The App provides a backup and restore feature, but please note the following:
 
 - You are responsible for choosing and managing the destination of backup files (a cloud service, your device, etc.)
 - If you choose a third-party service such as a cloud service as the destination, that service's terms of use apply
-- We shall not be liable for any damage incurred by you due to the loss, corruption, or leakage of backup files, or the failure of a restore
-- The restore feature overwrites your current data. We shall not be liable for the loss of existing data caused by a restore operation
+- To the maximum extent permitted by applicable law, we shall not be liable for any damage incurred by you due to the loss, corruption, or leakage of backup files, or the failure of a restore
+- The restore feature overwrites your current data. To the maximum extent permitted by applicable law, we shall not be liable for the loss of existing data caused by a restore operation
 
 ### 9.3 Device Management
 
