@@ -1,15 +1,27 @@
 ---
 layout: default
 ---
+{% comment %} ページの言語に応じて文書種別ラベルを切り替える {% endcomment %}
+{% if page.lang == 'en' %}
+  {% assign doc_type_label = site.data.doc_types_en[page.doc_type] | default: page.doc_type %}
+{% else %}
+  {% assign doc_type_label = site.data.doc_types[page.doc_type] | default: page.doc_type %}
+{% endif %}
+{% comment %} 同じアプリ・同じ文書種別の他言語版を探す {% endcomment %}
+{% assign same_docs = site.apps | where: "app_id", page.app_id | where: "doc_type", page.doc_type %}
 <article class="app-policy">
   <header class="policy-header">
     <h1>{{ page.app_name }}</h1>
-    <p class="policy-doc-type">{{ site.data.doc_types[page.doc_type] | default: page.doc_type }}</p>
+    <p class="policy-doc-type">{{ doc_type_label }}</p>
     {% if page.version %}
     <p class="policy-meta">
       <span class="policy-version">Version {{ page.version }}</span>
       {% if page.last_updated %}
+      {% if page.lang == 'en' %}
+      <span class="policy-date">Last updated: {{ page.last_updated | date: "%B %-d, %Y" }}</span>
+      {% else %}
       <span class="policy-date">最終更新日: {{ page.last_updated | date: "%Y年%-m月%-d日" }}</span>
+      {% endif %}
       {% endif %}
     </p>
     {% endif %}
@@ -18,6 +30,15 @@ layout: default
     {% elsif page.lang == 'en' %}
     <p class="policy-lang-note">Language: English</p>
     {% endif %}
+    {% for doc in same_docs %}
+    {% if doc.url != page.url %}
+    <p class="policy-lang-switch">
+      <a href="{{ doc.url | prepend: site.baseurl }}" hreflang="{{ doc.lang }}" lang="{{ doc.lang }}">
+        {% if doc.lang == 'en' %}English version{% elsif doc.lang == 'ja' %}日本語版はこちら{% else %}{{ doc.lang }}{% endif %}
+      </a>
+    </p>
+    {% endif %}
+    {% endfor %}
   </header>
 
   <div class="policy-body">
@@ -25,6 +46,10 @@ layout: default
   </div>
 
   <footer class="policy-footer">
+    {% if page.lang == 'en' %}
+    <a href="{{ site.baseurl }}/">&larr; Back to list</a>
+    {% else %}
     <a href="{{ site.baseurl }}/">&larr; 一覧へ戻る</a>
+    {% endif %}
   </footer>
 </article>

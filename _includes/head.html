@@ -1,7 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
-  {% if page.app_name %}{{ page.app_name }}{% if page.doc_type %} - {{ site.data.doc_types[page.doc_type] | default: page.doc_type }}{% endif %} | {% endif %}{{ site.title }}
+  {% if page.lang == 'en' %}{% assign head_doc_types = site.data.doc_types_en %}{% else %}{% assign head_doc_types = site.data.doc_types %}{% endif %}
+  {% if page.app_name %}{{ page.app_name }}{% if page.doc_type %} - {{ head_doc_types[page.doc_type] | default: page.doc_type }}{% endif %} | {% endif %}{{ site.title }}
 </title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
 {% if site.google_site_verification %}

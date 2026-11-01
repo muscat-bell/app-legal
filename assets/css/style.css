@@ -195,6 +195,16 @@ body {
   margin: 0.5rem 0 0;
 }
 
+/* 他言語版へのリンク */
+.policy-lang-switch {
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+.policy-lang-switch a {
+  color: #1a73e8;
+}
+
 /* --- Policy Body Typography ----------------------- */
 .policy-body h2 {
   font-size: 1.2rem;

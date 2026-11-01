@@ -1,0 +1,6 @@
+# 文書種別とその英語表示名のマッピング（lang: en のページで使用）
+# doc_types.yml にエントリを追加した場合はこちらにも追加する
+privacy: "Privacy Policy"
+terms: "Terms of Service"
+data-deletion: "Data Deletion Policy"
+tokusho: "Legal Notice (Specified Commercial Transactions Act)"
