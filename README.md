@@ -29,7 +29,8 @@ app-legal/
 │   └── app3/
 │       └── privacy.md
 ├── _data/
-│   └── doc_types.yml             # 文書種別ラベル定義
+│   ├── doc_types.yml             # 文書種別ラベル定義（日本語）
+│   └── doc_types_en.yml          # 文書種別ラベル定義（英語）
 ├── _layouts/
 │   ├── default.html              # 共通レイアウト
 │   └── app.html                  # 法的ドキュメント用レイアウト
@@ -109,6 +110,14 @@ Markdown でポリシー本文を記述…
 公開URL: `https://muscat-bell.github.io/app-legal/myapp/privacy/`
 
 ## 英語版を追加する手順
+
+日本語版と同じディレクトリに `<doc_type>-en.md` という名前でファイルを作成し、front matter の `lang` を `en` にします。
+`app_id` と `doc_type` を日本語版と揃えると、各ページに日本語版／英語版の相互リンクが自動で表示されます。
+
+- 公開URL: `https://muscat-bell.github.io/app-legal/myapp/privacy-en/`
+- 英語ページでは文書種別名・最終更新日・戻るリンクが英語で表示されます（文書種別名は `_data/doc_types_en.yml` で定義）
+- 英語版は日本語版の翻訳であり、内容に齟齬がある場合は日本語版が優先される旨を本文冒頭に記載してください
+- 日本語版を更新した場合は、英語版も同じ内容に更新してください
 
 ```yaml
 # _apps/myapp/privacy-en.md
